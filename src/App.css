@@ -1,0 +1,243 @@
+/* ========================== */
+/* GLOBAL STYLES */
+/* ========================== */
+
+/* Smooth transition for background and text color */
+body {
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+/* Remove default button styles */
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Button hover effect */
+button:hover {
+  color: #ffcc00;
+}
+
+/* Input field base styles */
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Highlight input field on focus */
+.input-field:focus {
+  border-color: #007bff;
+}
+
+/* ========================== */
+/* LAYOUT & CONTAINER STYLES */
+/* ========================== */
+
+/* Main board container (centers the content) */
+.board-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Task board layout (holds all task columns) */
+.task-board {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* Individual task columns */
+.task-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+/* Grouping of task columns */
+.columns {
+  display: flex;
+  gap: 20px;
+}
+
+/* General container for tasks */
+.task-container {
+  display: flex;
+  gap: 20px;
+}
+
+/* ========================== */
+/* FORM & INPUT STYLES */
+/* ========================== */
+
+/* Task input section (for adding new tasks) */
+.task-input {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Styling for input fields inside the task input section */
+.task-input input,
+.task-input select {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Add task button */
+.add-task-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Add task button hover effect */
+.add-task-btn:hover {
+  background: #0056b3;
+}
+
+/* ========================== */
+/* TASK & CARD STYLES */
+/* ========================== */
+
+/* Task column styling */
+.column {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  width: 250px;
+  min-height: 300px;
+}
+
+/* Task card styling */
+.task-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Soft shadow */
+  margin-bottom: 10px;
+  transition: transform 0.2s ease-in-out;
+  /* Hover effect */
+}
+
+/* Task card hover effect */
+.task-card:hover {
+  transform: scale(1.03);
+  /* Slight zoom effect */
+}
+
+/* Task card title */
+.task-card h4 {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Task card description */
+.task-card p {
+  font-size: 14px;
+  color: gray;
+}
+
+/* Delete button inside task cards */
+.task-card button {
+  background: red;
+  color: white;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+/* Delete button hover effect */
+.delete-btn {
+  background: red;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Delete button hover effect (dark red) */
+.delete-btn:hover {
+  background: darkred;
+}
+
+/* ========================== */
+/* DARK MODE STYLES */
+/* ========================== */
+
+/* Overall dark mode background */
+.dark-mode {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+/* Dark mode task columns */
+.dark-mode .column {
+  background: #333;
+}
+
+/* Dark mode task cards */
+.dark-mode .task-card {
+  background: #252525;
+  color: white;
+  box-shadow: 2px 4px 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Dark mode task card description */
+.dark-mode .task-card p {
+  color: #bbb;
+}
+
+/* Dark mode input fields */
+.dark-mode .input-field {
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+}
+
+/* ========================== */
+/* RESPONSIVE DESIGN */
+/* ========================== */
+
+/* Mobile: Stack tasks on top of each other */
+@media (max-width: 768px) {
+  .task-board {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .task-column {
+    width: 100%;
+    max-width: 90%;
+  }
+}
+
+/* Tablet and larger: Display tasks in three columns */
+@media (min-width: 769px) {
+  .task-board {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .task-column {
+    flex: 1;
+    max-width: calc(33.33% - 20px);
+    /* Adjust for spacing */
+  }
+}
